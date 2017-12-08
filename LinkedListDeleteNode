@@ -1,0 +1,48 @@
+public void deleteInBetween(int x)
+	
+	{
+	Node t= head;
+	while(t.next.data!=x)
+	{
+		t=t.next;
+	}
+	Node d=t.next;
+	System.out.println("Deleted Node"+d.data);
+	t.next=t.next.next;
+	}
+	
+  
+ public void deleteBegning()
+	{
+		if(head==null)
+			return;
+		else if(head.next==null)
+		{
+		 head= null;
+		}
+		else
+		{
+			
+			head= head.next;
+		}
+		
+	}
+  
+
+public void deleteEndNode()
+	{
+		if(head==null)
+			return;
+		else if(head.next==null)
+		head=null;
+		else
+		{
+			Node t= head;
+			while(t.next.next!=null)
+			{
+				t=t.next;
+			}
+			t.next=null;
+			
+		}
+	}
