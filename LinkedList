@@ -1,0 +1,69 @@
+
+//This Java program insertion and print opertaion in Linked List.
+import java.util.Collections;
+import java.util.List;
+
+
+class LinkedList {
+	public Node head;
+	public void insert(int x)
+	{
+	 if (head==null)
+	 {
+		 head= new Node(x);
+	 }
+	 else
+	 {
+		 Node temp=head;
+		 while(temp.next!=null)
+		 {
+			 temp=temp.next;
+		 }
+		 temp.next= new Node(x);
+		 
+	 }
+	}
+	public void printList()
+	{
+		Node temp=head;
+		while(temp!=null)
+		{
+			System.out.print(temp.data);
+			System.out.print("->");
+			temp=temp.next;
+		}
+		System.out.println("null\n");
+	}
+	public void getHead()
+	{
+		System.out.println(head.data+"\n");
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		LinkedList list = new LinkedList();
+		list.insert(5);
+		list.insert(2);
+		list.insert(10);
+		list.insert(16);
+		list.insert(22);
+		list.printList();
+		list.getHead();
+		
+	
+	
+	}
+	class Node
+{  
+
+    int data;
+    Node next;
+    Node(int val)
+    {
+        this.data=val;
+        this.next=null;
+    }
+}
+}
+
