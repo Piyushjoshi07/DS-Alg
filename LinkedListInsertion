@@ -45,6 +45,7 @@ class LinkedList {
 	t.next= head;
 	head= t;
 	}
+	
 	public void insertAtK(int x,int k)
 	{
 		Node t= head;
@@ -57,7 +58,8 @@ class LinkedList {
 		t.next=n;
 		
 	}
-	public static void main(String[] args)
+
+public static void main(String[] args)
 	{
 		LinkedList list = new LinkedList();
 		list.insert(5);
@@ -72,7 +74,9 @@ class LinkedList {
 	
 	
 	}
-	class Node
+
+
+class Node
 {  
 
     int data;
