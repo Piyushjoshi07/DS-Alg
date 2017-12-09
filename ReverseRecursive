@@ -1,0 +1,58 @@
+package project;
+ import project.Node;
+public class LinkedList {
+public static Node head;
+		
+public void insert(int x)
+		{
+		 if (head==null)
+		 {
+			 head= new Node(x);
+		 }
+		 else
+		 {
+			 Node temp=head;
+			 while(temp.next!=null)
+			 {
+				 temp=temp.next;
+			 }
+			 temp.next= new Node(x);
+			 
+		 }
+		}	
+public Node getHead()
+		{
+		
+			return  head;
+		}
+void reverse(Node t)
+		{ 
+			if(t!=null)
+			{
+			reverse(t.next);
+			System.out.print(t.data);
+			System.out.print("->");
+			}
+		
+		}
+void printRecursive(Node t)
+		{
+			if(t!=null)
+			{
+				System.out.print(t.data+"->");
+				printRecursive(t.next);
+			}
+		}
+public static void main(String[] args)
+		{
+			LinkedList list = new LinkedList();
+			list.insert(1);
+			list.insert(2);
+			list.insert(3);
+			list.insert(4);
+			Node t= list.getHead();
+			list.printRecursive(t);
+			list.reverse(t);
+		
+		}
+}
