@@ -43,6 +43,20 @@ void printRecursive(Node t)
 				printRecursive(t.next);
 			}
 		}
+
+Node reverseList(Node Current)
+{
+	Node Previous=null;
+	Node Next=null;
+	while(Current!=null)
+	{
+		Next=Current.next;
+		Current.next=Previous;
+		Previous=Current;
+		Current=Next;
+	}
+	return Previous;
+}
 public static void main(String[] args)
 		{
 			LinkedList list = new LinkedList();
@@ -53,6 +67,8 @@ public static void main(String[] args)
 			Node t= list.getHead();
 			list.printRecursive(t);
 			list.reverse(t);
+			Node newHead= list.reverseList(t);
+			list.printRecursive(newHead);
 		
 		}
 }
