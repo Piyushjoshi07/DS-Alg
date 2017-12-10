@@ -1,0 +1,83 @@
+package project;
+import project.Node1;
+
+public class DoublyLinkedList {
+public Node1 head;
+	void insertAtBegning(int x)
+	{
+		
+		if(head==null)
+		{
+			head=new Node1(x);
+		}
+		else
+		{
+			Node1 temp= new Node1(x);
+			temp.next=head;
+			head=temp;
+			head.prev=null;
+			head.next.prev=head;
+		}
+	
+	}
+	void insertAtEnd(int x)
+	{
+		if(head==null)
+		{
+			head=new Node1(x);
+		}
+		else
+		{
+		Node1 t=new Node1(x);
+		Node1 temp=head;
+		while(temp.next!=null)
+		{
+			temp=temp.next;
+		}
+		temp.next=t;
+		t.prev=temp;
+		t.next=null;
+		}
+		
+	}
+	void inserAtK(int x, int k)
+	{
+		Node1 temp= new Node1(x);
+		Node1 t= head;
+		for(int i=0; i<k-1;i++)
+		{
+			t=t.next;
+		}
+		temp.prev=t;
+		temp.next=t.next;
+		t.next.prev=temp;
+		t.next=temp;
+	}
+	void printList()
+	{
+		Node1 temp=head;
+		while(temp!=null)
+		{
+		
+			System.out.print(temp.data+"->");
+			temp=temp.next;
+		}
+	}
+	public static void main(String[] args)
+	{
+		DoublyLinkedList list= new DoublyLinkedList();
+		list.insertAtBegning(1);
+		list.insertAtBegning(2);
+		list.insertAtBegning(3);
+		list.insertAtBegning(4);
+		//list.printList();
+		list.insertAtEnd(5);
+		list.insertAtEnd(6);
+		list.insertAtEnd(7);
+		list.insertAtEnd(8);
+		list.inserAtK(10, 2);
+		list.inserAtK(12, 4);
+		list.printList();
+		System.out.print("null");
+	}
+}
