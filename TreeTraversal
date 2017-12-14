@@ -12,6 +12,16 @@ public class TreeTraversal {
 		inorder(t.right);
 	}
 	}
+	void preOrder(Tree root)
+	{
+		Tree t= root;
+		if(t!=null)
+		{
+			System.out.print(t.data+",");
+			preOrder(t.left);
+			preOrder(t.right);
+		}
+	}
 	public static void main(String[] args)
 	{
 		 Tree root= new Tree(1);
@@ -24,6 +34,7 @@ public class TreeTraversal {
 		 System.out.println(root.data);
 		 TreeTraversal tr= new TreeTraversal();
 		 tr.inorder(root);
+		 tr.preOrder(root);
 		 
 	}
 }
