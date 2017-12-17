@@ -21,7 +21,7 @@ public class EqualSumPairs {
         }
     };
  
-	 void function(int[] A)
+	 boolean function(int[] A)
 	 {
 		 
 		 HashMap<Integer, pair> h= new HashMap<Integer, pair>();
@@ -38,11 +38,11 @@ public class EqualSumPairs {
 				 {
 					 pair p=h.get(sum);
 					 System.out.println(A[p.first]+"+"+A[p.second]+"="+A[i]+"+"+A[j]);
+				 return true;
 				 }
 				 
 			 }
 		 }
-		 
-		 
+		 return false;
 	 }
 }
