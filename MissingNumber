@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class MissingNumber {
+
+	public static void main(String[] args)
+	{
+	Integer[] A = {12,13,14,15,16,17,19};
+	MissingNumber m= new MissingNumber();
+	m.findMissing(A);
+	}
+	
+void findMissing(Integer[] A)
+{
+	HashSet<Integer> s= new HashSet<>(Arrays.asList(A));
+	for(int j=A[0];j<=A[A.length-1];j++)
+	{
+		if(!s.contains(j))
+		{
+			System.out.print("Missing Number is "+j);
+		}
+	}
+
+}
+}
