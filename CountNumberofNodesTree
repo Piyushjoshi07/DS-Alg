@@ -1,0 +1,31 @@
+public class CountTreeNodes {
+
+	int numberofNodes(Tree root)
+	{
+		Tree t=root;
+		if(t!=null)
+		{
+			int l= numberofNodes(root.left);
+			int r= numberofNodes(root.right);
+			return (1+l+r);
+			//return(1+numberofNodes(root.left)+numberofNodes(root.right));
+		}
+		else
+			return 0;
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		CountTreeNodes n= new CountTreeNodes();
+		Tree root=new Tree(1);
+		root.left=new Tree(2);
+		root.right=new Tree(3);
+		root.left.left=new Tree(4);
+		root.left.right=new Tree(5);
+		root.right.left=new Tree(6);
+		root.right.right=new Tree(7);
+		int count = n.numberofNodes(root);
+		System.out.println("Total number of Nodes:"+count);
+	}
+}
