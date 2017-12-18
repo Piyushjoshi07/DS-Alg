@@ -19,7 +19,20 @@ public class TreeCountLeafnNonLeaf {
 			return l+r+0;
 		}
 	}
-	
+	int functionNonLeaf(Tree root)
+	{
+		Tree t=root;
+		if(t==null) return 0;
+		if(t.left==null && t.right==null)
+		{
+			return 0;
+		}
+		else
+		{
+			return functionNonLeaf(root.left)+functionNonLeaf(root.right)+1;
+		}
+			
+	}
 	public static void main(String[] args)
 	{
 		Tree root= new Tree(1);
@@ -31,6 +44,8 @@ public class TreeCountLeafnNonLeaf {
 		TreeCountLeafnNonLeaf n= new TreeCountLeafnNonLeaf();
 		int count= n.functionLeaf(root);
 		System.out.print("Total Number of leaf Nodes:"+count);
+		int count1= n.functionNonLeaf(root);
+		System.out.print("Total Number of Non-leaf Nodes:"+count1);
 		
 	}
 }
