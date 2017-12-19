@@ -1,0 +1,31 @@
+public class TreeCompleteNodeCount {
+
+	int function(Tree root)
+	{
+		Tree t=root;
+		if(t==null) return 0;
+		if(t.left==null && t.right==null)  return 0;
+		else if (t.left!=null && t.right!=null) 
+		{
+			return 1+function(t.left)+function(t.right);
+		}
+		else{
+			return function(t.left)+function(t.right);
+		}
+		
+	}
+	public static void main(String[] args)
+	{
+		Tree root= new Tree(1);
+		root.left=new Tree(2);
+		root.right= new Tree(3);
+		root.left.left=new Tree(4);
+		root.right.left=new Tree(5);
+		root.left.right=new Tree(6);
+		root.right.right=new Tree(7);
+		TreeCompleteNodeCount n= new TreeCompleteNodeCount();
+		int count= n.function(root);
+		System.out.print("Full Node:"+count);
+	}
+	
+}
